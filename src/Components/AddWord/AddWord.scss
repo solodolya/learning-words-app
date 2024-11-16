@@ -1,0 +1,49 @@
+@use "../../assets/styles/vars";
+@use "../../assets/styles/templates";
+
+.add-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 200px auto 50px;
+  padding: 10px 0;
+  background-color: vars.$dots-color;
+
+  &__input {
+    margin: 0 10px;
+    padding: 0 20px;
+    @include templates.text;
+    border: none;
+    border-radius: 10px;
+
+    &::placeholder {
+      font-size: 20px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: 50px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    @include templates.title;
+    font-size: 20px;
+    color: vars.$white-color;
+    background-color: vars.$ordinary-color;
+    border-radius: 15px;
+    border: none;
+
+    &:hover {
+      border: 2px solid vars.$active-color;
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: vars.$active-color;
+    }
+  }
+}

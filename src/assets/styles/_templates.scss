@@ -1,0 +1,21 @@
+@use "vars";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin title {
+  font-family: vars.$font-family;
+  font-size: 32px;
+  font-weight: 500;
+  color: vars.$text-color;
+}
+
+@mixin text {
+  font-family: vars.$font-family;
+  font-size: 20px;
+  font-weight: 400;
+  color: vars.$text-color;
+}

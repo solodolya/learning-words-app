@@ -1,0 +1,10 @@
+@use "vars";
+@use "templates";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: vars.$white-color;
+}

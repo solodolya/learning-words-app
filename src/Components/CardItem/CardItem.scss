@@ -1,0 +1,51 @@
+@use "../../assets/styles/vars";
+@use "../../assets/styles/templates";
+
+.card-item {
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 50%;
+    height: 450px;
+    margin: 30px auto;
+    background-color: vars.$bg-color;
+    border-radius: 10px;
+  }
+
+  &__text {
+    @include templates.text;
+    font-size: 30px;
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: 50px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    @include templates.title;
+    font-size: 20px;
+    color: vars.$white-color;
+    background-color: vars.$ordinary-color;
+    border-radius: 15px;
+    border: none;
+
+    &:hover {
+      border: 2px solid vars.$active-color;
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: vars.$active-color;
+    }
+  }
+}

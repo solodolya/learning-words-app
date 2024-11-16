@@ -1,0 +1,33 @@
+@use "../../assets/styles/vars";
+@use "../../assets/styles/templates";
+
+.edit-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 2px solid vars.$dots-color;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    padding: 0 20px;
+    @include templates.text;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+  }
+
+  &__edit {
+    @extend .edit-form;
+    background-color: vars.$dots-color;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+  }
+}

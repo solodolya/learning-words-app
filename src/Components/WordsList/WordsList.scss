@@ -1,0 +1,24 @@
+@use "../../assets/styles/vars";
+@use "../../assets/styles/templates";
+
+.words-list {
+  width: 80%;
+  margin: 20px auto 50px;
+
+  &__titles {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 10px auto;
+    background-color: vars.$bg-color;
+  }
+
+  &__title {
+    padding: 10px 20px;
+    @include templates.title;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+}

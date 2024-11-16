@@ -1,0 +1,41 @@
+@use "../../assets/styles/vars";
+@use "../../assets/styles/templates";
+
+.btn-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: 50px;
+  min-width: 200px;
+  margin: 0 auto;
+  padding: 15px;
+  @include templates.title;
+  font-size: 20px;
+  color: vars.$white-color;
+  background-color: vars.$ordinary-color;
+  border-radius: 15px;
+  border: none;
+
+  &--delete {
+    background-color: vars.$important-color;
+  }
+
+  &--edit {
+    background-color: vars.$accent-color;
+  }
+
+  &--confirm {
+    background-color: vars.$confirm-color;
+  }
+
+  &:hover {
+    border: 2px solid vars.$active-color;
+    cursor: pointer;
+  }
+
+  &:active {
+    cursor: pointer;
+    background-color: vars.$active-color;
+  }
+}
