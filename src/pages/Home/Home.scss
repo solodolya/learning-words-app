@@ -1,0 +1,32 @@
+@use "../../assets/styles/vars";
+@use "../../assets/styles/templates";
+
+h1 {
+  margin-bottom: 100px;
+  padding-top: 250px;
+  text-align: center;
+  @include templates.title;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+h3 {
+  width: 70%;
+  margin: 50px auto 0;
+  padding: 20px;
+  @include templates.text;
+  font-size: 24px;
+  text-align: center;
+  background-color: #90ccf4;
+  border-radius: 10px;
+}
+
+.icon {
+  width: 300px;
+  height: 300px;
+  margin: 50px auto 200px;
+  background-image: url("/favicon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}

@@ -1,0 +1,17 @@
+@use "../assets/styles/vars";
+@use "../assets/styles/templates";
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: vars.$font-family;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  flex-grow: 1;
+}

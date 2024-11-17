@@ -2,23 +2,38 @@
 @use "../../assets/styles/templates";
 
 .words-list {
-  width: 80%;
+  width: 90%;
   margin: 20px auto 50px;
 
   &__titles {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr ) 2fr;
     margin: 10px auto;
+    padding: 10px 0;
     background-color: vars.$bg-color;
+    border-radius: 15px;
+    @media (max-width: vars.$desktop) {
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+    }
+    @media (max-width: vars.$tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
   }
 
   &__title {
-    padding: 10px 20px;
+    padding: 10px 0 10px 10px;
     @include templates.title;
+    font-size: 24px;
+    text-align: center;
+    @media (max-width: vars.$tablet) {
+      font-size: 20px;
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
+    text-align: start;
   }
 }

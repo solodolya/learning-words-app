@@ -62,10 +62,8 @@ function EditWord(props) {
                 onChange={(evt) => {
                     setTags(evt.target.value)
                 }}/>
-            <div className="edit-form__buttons">
-                <Button type="delete" action="Отменить" onClick={handleState}/>
-                <Button type="confirm" action="Сохранить"/>
-            </div>
+            <Button type="delete" action="Отменить" onClick={handleState}/>
+            <Button type="confirm" action="Сохранить"/>
         </>
     )
 }
@@ -87,10 +85,8 @@ function DisplayWord(props) {
             <p className="edit-form__content">{transcription}</p>
             <p className="edit-form__content">{russian}</p>
             <p className="edit-form__content">{tags}</p>
-            <div className="edit-form__buttons">
-                <Button type="confirm" action="Изменить" onClick={handleState}/>
-                <Button type="delete" action="Удалить"/>
-            </div>
+            <Button type="confirm" action="Изменить" onClick={handleState}/>
+            <Button type="delete" action="Удалить"/>
         </>
     )
 }

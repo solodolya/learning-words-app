@@ -3,12 +3,23 @@
 
 .add-form {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr) 2fr;
   gap: 20px;
-  width: 80%;
+  width: 90%;
   margin: 200px auto 50px;
-  padding: 10px 0;
+  padding: 10px;
   background-color: vars.$dots-color;
+  border-radius: 15px;
+  @media (max-width: vars.$desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: stretch;
+  }
+  @media (max-width: vars.$tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
 
   &__input {
     margin: 0 10px;
