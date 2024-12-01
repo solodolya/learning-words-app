@@ -2,11 +2,12 @@ import  { useState, useEffect } from 'react';
 
 import './GameItem.scss';
 
-export default function GameItem({ id, english, transcription, russian }) {
+export default function GameItem({ id, english, transcription, russian, countWords }) {
   const [display, setDisplay] = useState(false);
 
   const handleDisplay = () => {
-    setDisplay(!display)
+    setDisplay(!display);
+    countWords();
   }
 
   useEffect(() => {
@@ -24,7 +25,10 @@ export default function GameItem({ id, english, transcription, russian }) {
           {russian}
         </p>
         {!display &&
-          <button className="card-item__button" onClick={handleDisplay}>Перевод</button>
+          <button className="card-item__button"
+                  onClick={handleDisplay}>
+            Перевод
+          </button>
         }
       </div>
     </div>

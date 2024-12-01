@@ -25,19 +25,23 @@ export default function Game({upd}) {
     setActive((prevActive) => prevActive - 1);
   }
 
+  const countWords = () => {
+    setCount((count) => count + 1)
+  }
+
   return (
     <>
       <div className="container-cards">
         <div>
           <button className="cards-btn__prev" onClick={updIndexPrev}></button>
         </div>
-        <GameItem {...words[active]}/>
+        <GameItem {...words[active]} countWords={countWords} />
         <div>
           <button className="cards-btn__next" onClick={updIndexNext}></button>
         </div>
       </div>
       <div className="game-btn">
-        <Button type="confirm" action="Знаю" onClick={() => setCount((count) => count + 1)}/>
+        <Button type="confirm" action="Знаю"/>
         <Button type="edit" action="Повторить"/>
         <Button type="delete" action="Запомнить"/>
       </div>
