@@ -9,7 +9,7 @@
   },
   {
     "id":"2",
-    "english":"Caesar",
+    "english":"caesar",
     "transcription":"[ˈsi:zə]",
     "russian":"самодержец, кесарь",
     "tags":"история",
@@ -25,7 +25,7 @@
   },
   {
     "id":"4",
-    "english":"Indian corn",
+    "english":"indian corn",
     "transcription":"[ˈɪndjənˈkɔ:n]",
     "russian":"кукуруза",
     "tags":"растение",
@@ -33,7 +33,7 @@
   },
   {
     "id":"5",
-    "english":"May-apple",
+    "english":"may-apple",
     "transcription":"[ˈmeɪ,æpl]",
     "russian":"мандрагора",
     "tags":"растение",
@@ -41,7 +41,7 @@
   },
   {
     "id":"6",
-    "english":"November",
+    "english":"november",
     "transcription":"[nəuˈvembə]",
     "russian":"ноябрь",
     "tags":"месяц",
@@ -73,7 +73,7 @@
   },
   {
     "id":"10",
-    "english":"Heather",
+    "english":"heather",
     "transcription":"[ˈheðə]",
     "russian":"вереск",
     "tags":"растение",

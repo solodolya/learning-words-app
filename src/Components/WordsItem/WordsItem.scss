@@ -31,10 +31,16 @@
     @media (max-width: vars.$desktop) {
       flex-flow: row wrap;
       justify-content: stretch;
+      text-align: justify;
     }
     @media (max-width: vars.$tablet) {
       display: flex;
       flex-shrink: 0;
+      text-align: justify;
+    }
+    &--error {
+      border: red solid 2px;
+      border-radius: 10px;
     }
   }
 

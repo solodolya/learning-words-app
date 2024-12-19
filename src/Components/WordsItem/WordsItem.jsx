@@ -10,6 +10,7 @@ function WordsItem(props) {
     const handleEdit = () => {
         setEdit(!edit);
     }
+
     return (
         <form className={edit ? "edit-form__edit" : "edit-form"} name="editForm">
             {edit
@@ -36,34 +37,80 @@ function EditWord(props) {
     const [inputTranscription, setTranscription] = useState(transcription);
     const [inputTranslation, setTranslation] = useState(russian);
     const [inputTags, setTags] = useState(tags);
+    const [error, setError] = useState([]);
+    const [disabled, setDisabled] = useState(false);
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (inputEnglish.trim() === "" || inputTranscription.trim() === "" || inputTranslation.trim() === "" || inputTags.trim() === "") {
+        setDisabled(!disabled);
+      }
+      console.log("Сохранено новое слово:", inputEnglish, inputTranscription, inputTranslation, inputTags);
+    }
+
+    function addError(newError) {
+      setError([...error, newError]);
+      console.log(error);
+    }
+
+    function removeError(emptyError) {
+      const updError = error.filter((item) => item !== emptyError);
+      setError(updError);
+      console.log(error);
+    }
+
     return (
         <>
             <input
-                className="edit-form__content"
+                className={error.includes("english") === true ? "edit-form__content--error" : "edit-form__content"}
                 value={inputEnglish}
-                onChange={(evt) => {
-                    setEnglish(evt.target.value)
-                }}/>
+                onChange={(e) => {
+                    if (e.target.value.trim() === "") {
+                      addError("english");
+                    }
+                    setEnglish(e.target.value);
+                    removeError("english");
+                }}
+                required
+            />
             <input
-                className="edit-form__content"
+                className={error.includes("transcription") === true ? "edit-form__content--error" : "edit-form__content"}
                 value={inputTranscription}
-                onChange={(evt) => {
-                    setTranscription(evt.target.value)
-                }}/>
+                onChange={(e) => {
+                   if (e.target.value.trim() === "") {
+                  addError("transcription");
+                }
+                  setTranscription(e.target.value);
+                  removeError("transcription");
+                }}
+                required
+            />
             <input
-                className="edit-form__content"
+                className={error.includes("translation") === true ? "edit-form__content--error" : "edit-form__content"}
                 value={inputTranslation}
-                onChange={(evt) => {
-                    setTranslation(evt.target.value)
-                }}/>
+                onChange={(e) => {
+                    if (e.target.value.trim() === "") {
+                      addError("translation");
+                    }
+                    setTranslation(e.target.value);
+                    removeError("translation");
+                }}
+                required
+            />
             <input
-                className="edit-form__content"
+                className={error.includes("tags") === true ? "edit-form__content--error" : "edit-form__content"}
                 value={inputTags}
-                onChange={(evt) => {
-                    setTags(evt.target.value)
-                }}/>
+                onChange={(e) => {
+                    if (e.target.value.trim() === "") {
+                      addError("tags");
+                    }
+                    setTags(e.target.value);
+                    removeError("tags");
+                }}
+                required
+            />
             <Button type="delete" action="Отменить" onClick={handleState}/>
-            <Button type="confirm" action="Сохранить"/>
+            <Button type="confirm" action="Сохранить" onClick={handleSubmit} disabled={disabled}/>
         </>
     )
 }
@@ -77,7 +124,7 @@ EditWord.propTypes = {
 };
 
 function DisplayWord(props) {
-    const {english, transcription, russian, tags, handleState} = props;
+    const { english, transcription, russian, tags, handleState } = props;
 
     return (
         <>
