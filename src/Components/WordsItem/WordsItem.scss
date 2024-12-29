@@ -17,6 +17,10 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
+  @media (max-width: vars.$mobile) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
 
   &__content {
     display: flex;
@@ -30,15 +34,15 @@
     border-radius: 10px;
     @media (max-width: vars.$desktop) {
       flex-flow: row wrap;
-      justify-content: stretch;
-      text-align: justify;
+      justify-content: center;
     }
     @media (max-width: vars.$tablet) {
       display: flex;
       flex-shrink: 0;
-      text-align: justify;
+      //justify-content: center;
     }
     &--error {
+      @extend .edit-form__content;
       border: red solid 2px;
       border-radius: 10px;
     }

@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react";
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { useState, useContext } from "react";
+import { Route, Routes } from 'react-router-dom';
 import Header from "../Components/Header/Header.jsx";
-import Home from '../pages/Home/Home.jsx';
-import Game from '../pages/Game/Game.jsx';
-import Table from '../pages/Table/Table.jsx';
-import Error from '../pages/Error/Error.jsx';
+import Home from '../Pages/Home/Home.jsx';
+import Game from '../Pages/Game/Game.jsx';
+import Table from '../Pages/Table/Table.jsx';
+import Error from '../Pages/Error/Error.jsx';
 import Footer from '../Components/Footer/Footer.jsx';
-import data from "../data/words.json";
+import { MyContext } from "../Context/MyContext.jsx";
+
 import './app.scss';
 
-
 export default function App() {
-  const [words, setWords] = useState(data);
+  const { stateContext } = useContext(MyContext);
+  const [words, setWords] = useState(stateContext);
   const upd = {words, setWords};
 
   return (
@@ -20,8 +21,8 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/game" element={<Game upd={upd}/>} />
-          <Route path="/table" element={<Table upd={upd}/>} />
+          <Route path="/game" element={<Game upd={upd} />} />
+          <Route path="/table" element={<Table />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       </main>

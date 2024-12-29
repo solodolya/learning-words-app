@@ -1,13 +1,9 @@
-import {useState, useEffect, forwardRef } from 'react';
+import {useState, useEffect } from 'react';
 
 import './GameItem.scss';
 
-export default function GameItem({ id, english, transcription, russian, countWords, ref }) {
+export default function GameItem({ id, english, transcription, russian, countWords }) {
   const [display, setDisplay] = useState(false);
-
-  const TranslateBtn = forwardRef((props, ref) => (
-    <button {...props} ref={ref}>{props.children}</button>
-  ));
 
   const handleDisplay = () => {
   setDisplay(!display);
@@ -25,13 +21,12 @@ export default function GameItem({ id, english, transcription, russian, countWor
           {russian}
         </p>
         {!display &&
-          <TranslateBtn
+          <button
                   className="card-item__button"
                   onClick={handleDisplay}
-                  ref={ref}
           >
             Перевод
-          </TranslateBtn>
+          </button>
         }
       </div>
     </div>

@@ -8,6 +8,9 @@ h1 {
   @include templates.title;
   font-size: 40px;
   font-weight: 900;
+  @media (max-width: vars.$tablet) {
+    font-size: 32px;
+  }
 }
 
 h3 {
